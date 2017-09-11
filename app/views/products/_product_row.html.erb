@@ -1,0 +1,26 @@
+
+
+  <div class="row">
+    <div class="col-xs-8">
+      <p><%= product.name %></small></p>
+    </div>
+    <div class="col-xs-4">
+
+      <%= form_for order_item, remote: true do |f| %>
+      <p class="text-right">Price: <span style="color: green">£<%= product.price %></span></h4>
+
+        <% if logged_in? %>
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        </div>
+        <% end %>
+
+
+      <% end %>
+    </div>
+
+  </div>

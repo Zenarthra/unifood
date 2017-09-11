@@ -1,0 +1,88 @@
+<header>
+            <div class="container">
+                <div class="header-top">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <p>UniFood -  
+                            <% if logged_in? %>
+<%= "Welcome #{current_user.firstname}!" %><%= " [Admin]" if current_user.admin? %></p>
+<div class = "success"><%= flash[:success] unless flash.empty? %></div>
+<% end %>        
+
+<% if !logged_in? %>
+<p><strong>Please register to make an order</strong></p>
+<% end %>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-6 text-right">
+                            </div>
+
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-right">
+                            <p>Open Sunday 5pm - 11pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-11 visible-xs">
+                            <div class="logo-mobile">
+                                <%= image_tag("home/logo.png") %>>
+                            </div>
+                        </div>
+                        <div class="col-md-11 col-xs-12">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>                        
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse text-center" id="myNavbar">
+                                <ul class="nav navbar-nav margin-s">
+                                    <li class="active"><a href="/home">Home</a></li>
+                                    <li><a href="/about">About</a></li>
+                                    <li><a href="products/index.html">Menu</a></li>
+                                    <li class="dropdown">
+                                        <div class="dropdown-menu btn-block box-content-menu">
+                                            <ul class="menu">
+                                                <li><a class="dropdown" href="404.html">404 page</a></li>
+                                                <li><a class="dropdown" href="buttons.html">buttons</a></li>
+                                                <li><a class="dropdown" href="grid.html">grid</a></li>
+                                                <li><a class="dropdown" href="tab&accordian.html">tab & accordian</a></li>
+                                                <li><a class="dropdown" href="typography.html">typography</a></li>
+                                                <li><a class="dropdown" href="icons.html">icons</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <div class="logo hidden-xs">
+                                	<%= image_tag("home/logo.png") %>
+                               
+                                </div>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="/event">events</a></li>
+                                    <li><a href="/contact">CONTACT Us</a></li>
+                                    </div></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <!--<a class="search" id="searchtoggl"><i class="fa fa-search"></i></a>-->
+                            <!--                                <div id="searchbar" class="clearfix">
+                                                                <form id="searchform">
+                                                                    <button type="submit" id="searchsubmit" class="fa fa-search fa-lg"></button>
+                                                                    <input type="search" name="search-icon" id="search-icon" placeholder="Keywords..." autocomplete="off">
+                                                                </form>
+                                                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="clearfix"></div>
+        </header>

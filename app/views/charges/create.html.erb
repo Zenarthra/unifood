@@ -1,0 +1,20 @@
+<% if logged_in? %>
+<div class="success">
+     Thanks, you paid <strong>£<%= ((@amount.to_f)/100) %>!</strong>
+</div>
+
+
+<script type="text/javascript">
+
+var delayMillis = 3000; //1 second
+setTimeout(function() {window.location.href="/home"}, delayMillis);
+
+// window.location.href="/home"  // put your correct path in a string here
+
+</script>
+
+
+
+<% end %>
+
+

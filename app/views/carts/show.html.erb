@@ -1,0 +1,46 @@
+<% if logged_in? %>
+<div class="scaled">
+  <%= render "shopping_cart" %>
+
+  </br>
+  </br>
+
+<%= form_tag charges_path do %>
+<div class="col-xs-offset-10">
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+
+      <span>Amount: £<%= @totalcost %></span>
+    
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Your order"
+          data-amount=""
+          data-locale="auto"></script>
+
+
+<% end %>
+
+</div>
+</div>
+
+<% end %>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
